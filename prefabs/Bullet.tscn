@@ -1,19 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6tds2tnlyfcm"]
+[gd_scene load_steps=4 format=3 uid="uid://b6tds2tnlyfcm"]
 
+[ext_resource type="Script" path="res://prefabs/Bullet.gd" id="1_5akb5"]
 [ext_resource type="Texture2D" uid="uid://djftv7qnr1u32" path="res://materials/character.png" id="1_sfhm3"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uevjk"]
-size = Vector2(4.00004, 12)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvwft"]
+size = Vector2(1.99999, 6)
 
 [node name="RigidBody2D" type="RigidBody2D"]
 rotation = 1.5708
 mass = 0.01
 gravity_scale = 0.0
+max_contacts_reported = 1
+contact_monitor = true
 lock_rotation = true
+script = ExtResource("1_5akb5")
 
-[node name="Character" type="Sprite2D" parent="."]
+[node name="bullet" type="Sprite2D" parent="."]
 scale = Vector2(0.2, 0.6)
 texture = ExtResource("1_sfhm3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_uevjk")
+position = Vector2(-5.42398e-06, -1.1919e-07)
+shape = SubResource("RectangleShape2D_kvwft")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

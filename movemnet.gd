@@ -1,26 +1,32 @@
 extends CharacterBody2D
+@export var speed = 200
 
-var bspeed = 750
+
+	
+func _process(delta):
+	look_at(get_global_mouse_position())
+	
+
+
+func get_input():
+	var input_direction = Input.get_vector("A", "D", "W", "S")
+	velocity = input_direction * speed
+
+func _physics_process(delta):
+	get_input()
+	move_and_slide()
+
+"""
+
 var speed = 3
 
-var bullet = preload("res://prefabs/Bullet.tscn")
 
-func fire():
-	var b_instance = bullet.instantiate()
-	b_instance.position = get_global_position() + Vector2(0,0)
-	b_instance.rotation_degrees = rotation_degrees + 90
-	b_instance.linear_velocity = Vector2(bspeed,0).rotated(rotation)
-	get_tree().get_root().call_deferred("add_child", b_instance)
 
 func _ready():
 	pass
 	
 	
-func _process(delta):
-	look_at(get_global_mouse_position())
-	
-	if Input.is_action_just_pressed("LMB"):
-		fire()
+
 		
 
 func _physics_process(delta):
@@ -37,5 +43,4 @@ func _physics_process(delta):
 	translate(motion*speed)
 	#move_and_slide()
 	
-	
-
+	"""

@@ -218,8 +218,6 @@ script = ExtResource("1_iodym")
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(0, -0.999999)
 scale = Vector2(0.2, 0.2)
-collision_layer = 3
-collision_mask = 3
 script = ExtResource("1_ht284")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
@@ -266,21 +264,25 @@ layer_0/tile_data = PackedInt32Array(65536, 131075, 1, 131072, 131075, 1, 196608
 [node name="StaticBody2D" type="StaticBody2D" parent="walls" groups=["walls"]]
 position = Vector2(0, 154)
 
-[node name="wall" type="CollisionShape2D" parent="walls/StaticBody2D"]
+[node name="wall" type="CollisionShape2D" parent="walls/StaticBody2D" groups=["walls"]]
 position = Vector2(-5.5, 0)
 shape = SubResource("RectangleShape2D_o4ki5")
 
-[node name="wall2" type="CollisionShape2D" parent="walls/StaticBody2D"]
+[node name="wall2" type="CollisionShape2D" parent="walls/StaticBody2D" groups=["walls"]]
 position = Vector2(-11, -308)
 shape = SubResource("RectangleShape2D_o4ki5")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="walls" groups=["walls"]]
 position = Vector2(-268, -7)
 
-[node name="wall2" type="CollisionShape2D" parent="walls/StaticBody2D2"]
+[node name="wall2" type="CollisionShape2D" parent="walls/StaticBody2D2" groups=["walls"]]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_btxc1")
 
-[node name="wall" type="CollisionShape2D" parent="walls/StaticBody2D2"]
+[node name="wall" type="CollisionShape2D" parent="walls/StaticBody2D2" groups=["walls"]]
 position = Vector2(533, 0.5)
+shape = SubResource("RectangleShape2D_btxc1")
+
+[node name="wall3" type="CollisionShape2D" parent="walls/StaticBody2D2" groups=["walls"]]
+position = Vector2(410, -95)
 shape = SubResource("RectangleShape2D_btxc1")

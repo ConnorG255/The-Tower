@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvinjomja77vh"]
+
+[ext_resource type="Script" path="res://movemnet.gd" id="1_ht284"]
+[ext_resource type="Texture2D" uid="uid://djftv7qnr1u32" path="res://character.png" id="1_yk8jg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6pf8t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f4e8s"]
+size = Vector2(56, 60)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(-253, -64)
+script = ExtResource("1_ht284")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_6pf8t")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+scale = Vector2(2.8, 3)
+texture = ExtResource("1_yk8jg")
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
+shape = SubResource("RectangleShape2D_f4e8s")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-253, -64)
+zoom = Vector2(0.565, 0.565)
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0

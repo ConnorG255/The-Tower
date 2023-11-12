@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-var bspeed = 1500
-var speed = 10
+var bspeed = 750
+var speed = 3
 
 var bullet = preload("res://prefabs/Bullet.tscn")
 

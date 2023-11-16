@@ -1,13 +1,14 @@
-[gd_scene load_steps=19 format=3 uid="uid://dvinjomja77vh"]
+[gd_scene load_steps=20 format=3 uid="uid://dvinjomja77vh"]
 
-[ext_resource type="Script" path="res://movemnet.gd" id="1_ht284"]
-[ext_resource type="Script" path="res://main.gd" id="1_iodym"]
+[ext_resource type="Script" path="res://scripts/Scene.gd" id="1_fgemd"]
 [ext_resource type="Texture2D" uid="uid://djftv7qnr1u32" path="res://materials/character.png" id="2_bqyek"]
+[ext_resource type="Script" path="res://scripts/movemnet.gd" id="2_n06yy"]
 [ext_resource type="Texture2D" uid="uid://b7wbnip6hxlhb" path="res://Tilesets/Grass.png" id="3_pf47w"]
-[ext_resource type="Script" path="res://Gunshoot.gd" id="4_mosxo"]
 [ext_resource type="Texture2D" uid="uid://4uqx2ognp0vm" path="res://Tilesets/Tilled Dirt.png" id="4_o42ql"]
+[ext_resource type="Script" path="res://scripts/Gunshoot.gd" id="4_vl2vg"]
 [ext_resource type="Texture2D" uid="uid://bkjd4bmhnqkld" path="res://Tilesets/Water.png" id="5_jqtcw"]
 [ext_resource type="Texture2D" uid="uid://evlmahks033d" path="res://Tilesets/Hills.png" id="6_5aq5x"]
+[ext_resource type="PackedScene" uid="uid://bmdvnuci2r8q" path="res://prefabs/pause.tscn" id="9_6su8i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6pf8t"]
 size = Vector2(60, 60)
@@ -213,28 +214,30 @@ size = Vector2(533, 20)
 size = Vector2(20, 327)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnkwd"]
+size = Vector2(38, 134)
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_iodym")
+script = ExtResource("1_fgemd")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(0, -0.999999)
 scale = Vector2(0.2, 0.2)
 collision_layer = 3
 collision_mask = 3
-script = ExtResource("1_ht284")
+script = ExtResource("2_n06yy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(-3.57628e-06, 5.96046e-07)
 shape = SubResource("RectangleShape2D_6pf8t")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+modulate = Color(0.639216, 1, 0.862745, 1)
 scale = Vector2(5, 5)
 texture = ExtResource("2_bqyek")
 
 [node name="Area2D" type="Area2D" parent="CharacterBody2D"]
 position = Vector2(65, 0)
-script = ExtResource("4_mosxo")
+script = ExtResource("4_vl2vg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
 light_mask = 2
@@ -287,11 +290,22 @@ shape = SubResource("RectangleShape2D_btxc1")
 position = Vector2(533, 0.5)
 shape = SubResource("RectangleShape2D_btxc1")
 
-[node name="El tore" type="StaticBody2D" parent="."]
+[node name="El tore" type="StaticBody2D" parent="." groups=["walls"]]
 position = Vector2(0, -62)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="El tore"]
+position = Vector2(0, -55)
 shape = SubResource("RectangleShape2D_qnkwd")
 
 [node name="Sprite2D" type="Sprite2D" parent="El tore"]
+position = Vector2(0, -55)
+scale = Vector2(3.24, 11.16)
 texture = ExtResource("2_bqyek")
+
+[node name="Pause" parent="." instance=ExtResource("9_6su8i")]
+visible = false
+offset_left = -124.0
+offset_top = -24.0
+offset_right = -124.0
+offset_bottom = -24.0
+scale = Vector2(0.62921, 0.723059)

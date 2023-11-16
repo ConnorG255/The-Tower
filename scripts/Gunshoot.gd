@@ -20,7 +20,7 @@ func fire():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_pressed("LMB") and ablefire == true:
+	if Input.is_action_pressed("LMB") and ablefire == true and Engine.time_scale != 0:
 		fire()
 		
 	pass

@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmdvnuci2r8q"]
+
+[ext_resource type="Script" path="res://prefabs/pause.gd" id="1_30s7w"]
+
+[node name="Pause" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_30s7w")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 398.0
+offset_bottom = 155.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Continue" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Continue"
+
+[node name="QUIT D_" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/QUIT D_" to="." method="_on_quit_d__pressed"]

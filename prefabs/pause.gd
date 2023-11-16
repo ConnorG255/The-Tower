@@ -3,7 +3,7 @@ extends Control
 
 @onready var main = $"../"
 
-
+# rest of pause menu in Scene.gd
 func _on_continue_pressed():
 	main.pause()
 	pass # Replace with function body.

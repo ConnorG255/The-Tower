@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dvinjomja77vh"]
+[gd_scene load_steps=21 format=3 uid="uid://dvinjomja77vh"]
 
 [ext_resource type="Script" path="res://scripts/Scene.gd" id="1_fgemd"]
 [ext_resource type="Texture2D" uid="uid://djftv7qnr1u32" path="res://materials/character.png" id="2_bqyek"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bkjd4bmhnqkld" path="res://Tilesets/Water.png" id="5_jqtcw"]
 [ext_resource type="Texture2D" uid="uid://evlmahks033d" path="res://Tilesets/Hills.png" id="6_5aq5x"]
 [ext_resource type="PackedScene" uid="uid://bmdvnuci2r8q" path="res://prefabs/pause.tscn" id="9_6su8i"]
+[ext_resource type="PackedScene" uid="uid://crmixsdgaq4xx" path="res://prefabs/enemy.tscn" id="10_iugcw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6pf8t"]
 size = Vector2(60, 60)
@@ -219,32 +220,32 @@ size = Vector2(38, 134)
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_fgemd")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="player" type="CharacterBody2D" parent="."]
 position = Vector2(0, -0.999999)
 scale = Vector2(0.2, 0.2)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("2_n06yy")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
 position = Vector2(-3.57628e-06, 5.96046e-07)
 shape = SubResource("RectangleShape2D_6pf8t")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="player"]
 modulate = Color(0.639216, 1, 0.862745, 1)
 scale = Vector2(5, 5)
 texture = ExtResource("2_bqyek")
 
-[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
+[node name="Area2D" type="Area2D" parent="player"]
 position = Vector2(65, 0)
 script = ExtResource("4_vl2vg")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/Area2D"]
 light_mask = 2
 visibility_layer = 2
 shape = SubResource("RectangleShape2D_wfh7g")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D/Area2D"]
+[node name="Sprite2D" type="Sprite2D" parent="player/Area2D"]
 texture = ExtResource("2_bqyek")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -309,3 +310,6 @@ offset_top = -24.0
 offset_right = -124.0
 offset_bottom = -24.0
 scale = Vector2(0.62921, 0.723059)
+
+[node name="enemy" parent="." instance=ExtResource("10_iugcw")]
+position = Vector2(-36, 100)

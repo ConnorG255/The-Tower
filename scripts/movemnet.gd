@@ -1,13 +1,13 @@
 extends CharacterBody2D
 @export var speed = 200
 
+# FOR PLAYER DONT KNOW WHY I CALLED IT MOVBEMENT
 
 	
+# Movement mainly
 func _process(delta):
 	look_at(get_global_mouse_position())
 	
-
-
 func get_input():
 	var input_direction = Input.get_vector("A", "D", "W", "S")
 	velocity = input_direction * speed
@@ -15,6 +15,15 @@ func get_input():
 func _physics_process(delta):
 	get_input()
 	move_and_slide()
+
+
+
+#Death
+
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("enemy"):
+		queue_free()
+
 
 """
 
@@ -44,3 +53,4 @@ func _physics_process(delta):
 	#move_and_slide()
 	
 	"""
+

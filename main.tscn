@@ -12,9 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://crmixsdgaq4xx" path="res://prefabs/enemy.tscn" id="10_iugcw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6pf8t"]
-size = Vector2(60, 60)
+size = Vector2(50, 50)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wfh7g"]
+size = Vector2(60, 60)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qgbj8"]
 texture = ExtResource("3_pf47w")
@@ -228,7 +229,8 @@ collision_mask = 3
 script = ExtResource("2_n06yy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
-position = Vector2(-3.57628e-06, 5.96046e-07)
+position = Vector2(-3.42727e-06, -4.76837e-06)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6pf8t")
 
 [node name="Sprite2D" type="Sprite2D" parent="player"]
@@ -243,9 +245,12 @@ script = ExtResource("4_vl2vg")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player/Area2D"]
 light_mask = 2
 visibility_layer = 2
+position = Vector2(-65, -3.33786e-06)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_wfh7g")
 
 [node name="Sprite2D" type="Sprite2D" parent="player/Area2D"]
+visible = false
 texture = ExtResource("2_bqyek")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -313,3 +318,5 @@ scale = Vector2(0.62921, 0.723059)
 
 [node name="enemy" parent="." instance=ExtResource("10_iugcw")]
 position = Vector2(-36, 100)
+
+[connection signal="body_entered" from="player/Area2D" to="player" method="_on_area_2d_body_entered"]

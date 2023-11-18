@@ -213,7 +213,7 @@ sources/3 = SubResource("TileSetAtlasSource_w3ppf")
 size = Vector2(533, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_btxc1"]
-size = Vector2(20, 327)
+size = Vector2(20, 460.938)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnkwd"]
 size = Vector2(38, 134)
@@ -278,7 +278,7 @@ layer_0/tile_data = PackedInt32Array(65536, 131075, 1, 131072, 131075, 1, 196608
 position = Vector2(0, 154)
 
 [node name="wall" type="CollisionShape2D" parent="walls/StaticBody2D"]
-position = Vector2(-5.5, 0)
+position = Vector2(-6, 93)
 shape = SubResource("RectangleShape2D_o4ki5")
 
 [node name="wall2" type="CollisionShape2D" parent="walls/StaticBody2D"]
@@ -289,11 +289,11 @@ shape = SubResource("RectangleShape2D_o4ki5")
 position = Vector2(-268, -7)
 
 [node name="wall2" type="CollisionShape2D" parent="walls/StaticBody2D2"]
-position = Vector2(0, 1)
+position = Vector2(0, 37.9375)
 shape = SubResource("RectangleShape2D_btxc1")
 
 [node name="wall" type="CollisionShape2D" parent="walls/StaticBody2D2"]
-position = Vector2(533, 0.5)
+position = Vector2(533, 30.5313)
 shape = SubResource("RectangleShape2D_btxc1")
 
 [node name="El tore" type="StaticBody2D" parent="." groups=["walls"]]

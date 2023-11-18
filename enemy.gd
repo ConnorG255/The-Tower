@@ -6,13 +6,13 @@ var attacknum = 7
 var move = Vector2()
 
 #higher num less speed
-@export var speed = 2000
+@export var speed = 0.0006
 
 
 func followplayer():
 	var player = get_parent().get_node("player")
 	
-	position += (player.position-position)/speed
+	global_position = global_position.lerp(player.position, speed)
 	#maybe add look at ???
 	
 	pass
@@ -22,7 +22,8 @@ func followplayer():
 # . 
 func attacktower():
 	var tower = get_parent().get_node("El tore")
-	position += (tower.position-position)/(speed)
+	global_position = global_position.lerp(tower.position, speed)
+	#position += (tower.position-position)/(speed)
 	pass
 
 func _ready():
@@ -30,9 +31,10 @@ func _ready():
 
 
 func _process(delta):
-
-	if(attacknum>7):
-		followplayer()
-	else:
-		attacktower()
+	if(Engine.time_scale != 0):
+		if(attacknum>7):
+			followplayer()
+		else:
+			attacktower()
+	
 	move_and_collide(move)

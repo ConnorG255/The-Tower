@@ -2,6 +2,35 @@ extends Node2D
 @onready var pausemen = $Pause
 var paused = false
 
+var rng = RandomNumberGenerator.new()
+
+
+
+
+var enemyS = preload("res://prefabs/enemy.tscn")
+var spawn_timer = 0
+var spawn_interval = 3.0  # Initial spawn interval in seconds
+
+func _process(delta):
+	if Input.is_action_just_pressed("pause"):
+		pause()
+		
+	spawn_timer += delta
+	if spawn_timer >= spawn_interval:
+		spawn_enemy()
+		spawn_timer = 0
+		decrease_spawn_interval()
+
+func spawn_enemy():
+	var enmy = enemyS.instantiate()
+	enmy.position = Vector2(rng.randf_range(-220, 220), 200)
+	call_deferred("add_child", enmy)
+
+func decrease_spawn_interval():
+	spawn_interval -= 0.1 
+	spawn_interval = max(0.5, spawn_interval)
+
+
 func pause():
 	if paused:
 		pausemen.hide()
@@ -11,14 +40,4 @@ func pause():
 		Engine.time_scale = 0
 		
 	paused = !paused
-	pass
-
-
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if Input.is_action_just_pressed("pause"):
-		pause()
-		pass
 	pass

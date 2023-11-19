@@ -2,8 +2,10 @@ extends RigidBody2D
 
 
 func _on_body_entered(body):
-	if body.is_in_group("walls"):
-		queue_free() 
+	queue_free()
+	#if body.is_in_group("walls"):
+#		queue_free() 
+	#else:
 		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

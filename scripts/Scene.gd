@@ -9,7 +9,8 @@ var rng = RandomNumberGenerator.new()
 
 var enemyS = preload("res://prefabs/enemy.tscn")
 var spawn_timer = 0
-var spawn_interval = 3.0  # Initial spawn interval in seconds
+var spawn_interval = 1.5  # Initial spawn interval in seconds
+
 
 func _process(delta):
 	if Input.is_action_just_pressed("pause"):
@@ -19,7 +20,9 @@ func _process(delta):
 	if spawn_timer >= spawn_interval:
 		spawn_enemy()
 		spawn_timer = 0
-		decrease_spawn_interval()
+		if(spawn_interval > 0):
+			decrease_spawn_interval()
+		
 
 func spawn_enemy():
 	var enmy = enemyS.instantiate()
@@ -27,8 +30,8 @@ func spawn_enemy():
 	call_deferred("add_child", enmy)
 
 func decrease_spawn_interval():
-	spawn_interval -= 0.1 
-	spawn_interval = max(0.5, spawn_interval)
+	spawn_interval -= 0.015 
+	#spawn_interval = max(0.5, spawn_interval)
 
 
 func pause():

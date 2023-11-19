@@ -1,13 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://crmixsdgaq4xx"]
+[gd_scene load_steps=5 format=3 uid="uid://crmixsdgaq4xx"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_6uahi"]
 [ext_resource type="Texture2D" uid="uid://djftv7qnr1u32" path="res://materials/character.png" id="1_ojd41"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hb6he"]
+size = Vector2(23.3333, 23.3333)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dlfmh"]
 
 [node name="enemy" type="CharacterBody2D" groups=["enemy"]]
 scale = Vector2(0.6, 0.6)
 script = ExtResource("1_6uahi")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -4.96705e-07)
+shape = SubResource("RectangleShape2D_hb6he")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 0.294118, 0.443137, 1)
@@ -16,4 +25,6 @@ scale = Vector2(1.66667, 1.66667)
 texture = ExtResource("1_ojd41")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_hb6he")
+shape = SubResource("RectangleShape2D_dlfmh")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

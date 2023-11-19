@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kvwft"]
 size = Vector2(1.99999, 6)
 
-[node name="RigidBody2D" type="RigidBody2D"]
+[node name="RigidBody2D" type="RigidBody2D" groups=["bullet"]]
 rotation = 1.5708
 mass = 0.01
 gravity_scale = 0.0

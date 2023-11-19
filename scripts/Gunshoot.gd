@@ -3,16 +3,24 @@ extends Area2D
 
 
 @export var bspeed = 750
-@export var firerate = 0.2
+@export var firerate = 0.4
 var ablefire = true
 var bullet = preload("res://prefabs/Bullet.tscn")
 
-func fire():
+func singlebulletfire():
 	var b_instance = bullet.instantiate()
 	b_instance.position = get_global_position() + Vector2(0,0)
 	b_instance.rotation_degrees = character.rotation_degrees + 90
 	b_instance.linear_velocity = Vector2(bspeed,0).rotated(character.rotation)
 	get_tree().get_root().call_deferred("add_child", b_instance)
+func fire():
+	# not optimal but dont know how to optimize rn
+	if(Global.score >= 2500):
+		if(Global.score >= 5000):
+			firerate = 0.2
+		else:
+			firerate = 0.3
+	singlebulletfire()
 	ablefire=false
 	await(get_tree().create_timer(firerate).timeout)
 	ablefire=true

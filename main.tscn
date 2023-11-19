@@ -321,6 +321,7 @@ offset_left = -253.0
 offset_top = -146.0
 offset_right = -253.0
 offset_bottom = -146.0
+scale = Vector2(0.3, 0.3)
 
 [node name="GlobalManager" type="Node2D" parent="."]
 script = ExtResource("11_1hr71")

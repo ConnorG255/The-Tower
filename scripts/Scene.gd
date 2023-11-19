@@ -9,7 +9,7 @@ var rng = RandomNumberGenerator.new()
 
 var enemyS = preload("res://prefabs/enemy.tscn")
 var spawn_timer = 0
-var spawn_interval = 1.5  # Initial spawn interval in seconds
+var spawn_interval = 1.3  # Initial spawn interval in seconds
 
 
 func _process(delta):
@@ -20,7 +20,7 @@ func _process(delta):
 	if spawn_timer >= spawn_interval:
 		spawn_enemy()
 		spawn_timer = 0
-		if(spawn_interval > 0):
+		if(spawn_interval > 0.1):
 			decrease_spawn_interval()
 		
 

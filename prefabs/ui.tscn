@@ -12,8 +12,11 @@ grow_vertical = 2
 
 [node name="score" type="Label" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 1.0
+offset_top = 68.0
+offset_right = 155.0
+offset_bottom = 125.0
 theme_override_colors/font_color = Color(1, 1, 1, 0.792157)
+theme_override_font_sizes/font_size = 40
 text = "0000000"
 script = ExtResource("1_v024a")

@@ -6,7 +6,7 @@ var attacknum = 7
 var move = Vector2()
 
 #higher num less speed
-@export var speed = 0.0006
+@export var speed = 0.0002
 
 
 func followplayer():

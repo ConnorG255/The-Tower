@@ -25,6 +25,7 @@ func fire():
 		else:
 			firerate = 0.3
 	singlebulletfire()
+	$"../../shootnoise".play()
 	ablefire=false
 	await(get_tree().create_timer(firerate).timeout)
 	ablefire=true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dvinjomja77vh"]
+[gd_scene load_steps=23 format=3 uid="uid://dvinjomja77vh"]
 
 [ext_resource type="Script" path="res://scripts/Scene.gd" id="1_fgemd"]
 [ext_resource type="Texture2D" uid="uid://djftv7qnr1u32" path="res://materials/character.png" id="2_bqyek"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bmdvnuci2r8q" path="res://prefabs/pause.tscn" id="9_6su8i"]
 [ext_resource type="PackedScene" uid="uid://grlj4ggikjv7" path="res://prefabs/ui.tscn" id="10_y3ox0"]
 [ext_resource type="Script" path="res://scripts/Global.gd" id="11_1hr71"]
+[ext_resource type="PackedScene" uid="uid://bmjq5t54g1ulv" path="res://prefabs/end_screen.tscn" id="12_bird5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6pf8t"]
 size = Vector2(50, 50)
@@ -295,7 +296,7 @@ shape = SubResource("RectangleShape2D_btxc1")
 position = Vector2(533, 30.5313)
 shape = SubResource("RectangleShape2D_btxc1")
 
-[node name="El tore" type="StaticBody2D" parent="." groups=["walls"]]
+[node name="El tore" type="StaticBody2D" parent="." groups=["tower", "walls"]]
 position = Vector2(0, -62)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="El tore"]
@@ -325,5 +326,13 @@ scale = Vector2(0.3, 0.3)
 
 [node name="GlobalManager" type="Node2D" parent="."]
 script = ExtResource("11_1hr71")
+
+[node name="EndScreen" parent="." instance=ExtResource("12_bird5")]
+visible = false
+offset_left = -311.0
+offset_top = -200.0
+offset_right = -311.0
+offset_bottom = -200.0
+scale = Vector2(0.5, 0.5)
 
 [connection signal="body_entered" from="player/Area2D" to="player" method="_on_area_2d_body_entered"]

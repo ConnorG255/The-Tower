@@ -4,7 +4,7 @@ var paused = false
 
 var rng = RandomNumberGenerator.new()
 
-
+@onready var endscreen = $EndScreen
 
 
 var enemyS = preload("res://prefabs/enemy.tscn")
@@ -13,6 +13,11 @@ var spawn_interval = 1.3  # Initial spawn interval in seconds
 
 
 func _process(delta):
+	if Global.tower_health == 0:
+		endscreen.show()
+		Engine.time_scale = 0
+		
+		
 	if Input.is_action_just_pressed("pause"):
 		pause()
 		

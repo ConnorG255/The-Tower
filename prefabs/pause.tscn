@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bmdvnuci2r8q"]
 
-[ext_resource type="Script" path="res://prefabs/pause.gd" id="1_30s7w"]
+[ext_resource type="Script" path="res://prefabs/uimanagement.gd" id="1_6bqoi"]
 
 [node name="Pause" type="Control"]
 layout_mode = 3
@@ -9,7 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_30s7w")
+script = ExtResource("1_6bqoi")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0

@@ -2,7 +2,7 @@ extends CharacterBody2D
 @export var speed = 200
 
 # FOR PLAYER DONT KNOW WHY I CALLED IT MOVBEMENT
-
+@onready var endscreen = $"../EndScreen"
 	
 # Movement mainly
 func _process(delta):
@@ -21,8 +21,9 @@ func _physics_process(delta):
 #Death
 
 func _on_area_2d_body_entered(body):
-	#if body.is_in_group("enemy"):
-		#End game screen flash
+	if body.is_in_group("enemy"):
+		endscreen.show()
+		Engine.time_scale = 0
 	pass
 
 

@@ -44,4 +44,7 @@ func _on_area_2d_body_entered(body):
 	if body.is_in_group("bullet"):
 		Global.score += 100
 		queue_free()
+	if body.is_in_group("tower"):
+		Global.score -= 10
+		queue_free()
 	pass 

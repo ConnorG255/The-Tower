@@ -304,18 +304,19 @@ position = Vector2(0, -55)
 shape = SubResource("RectangleShape2D_qnkwd")
 
 [node name="Sprite2D" type="Sprite2D" parent="El tore"]
-position = Vector2(0, -55)
+modulate = Color(0.952941, 0.952941, 0.952941, 1)
+position = Vector2(0, -54)
 scale = Vector2(3.24, 11.16)
 texture = ExtResource("2_bqyek")
 
 [node name="Pause" parent="." instance=ExtResource("9_6su8i")]
 visible = false
 z_index = 1
-offset_left = -124.0
-offset_top = -24.0
-offset_right = -124.0
-offset_bottom = -24.0
-scale = Vector2(0.62921, 0.723059)
+offset_left = -327.0
+offset_top = -142.0
+offset_right = -327.0
+offset_bottom = -142.0
+scale = Vector2(0.5, 0.5)
 
 [node name="UI" parent="." instance=ExtResource("10_y3ox0")]
 offset_left = -253.0
@@ -329,10 +330,11 @@ script = ExtResource("11_1hr71")
 
 [node name="EndScreen" parent="." instance=ExtResource("12_bird5")]
 visible = false
-offset_left = -311.0
-offset_top = -200.0
-offset_right = -311.0
-offset_bottom = -200.0
-scale = Vector2(0.5, 0.5)
+z_index = 1
+offset_left = -215.0
+offset_top = -99.0
+offset_right = -215.0
+offset_bottom = -99.0
+scale = Vector2(0.35, 0.35)
 
 [connection signal="body_entered" from="player/Area2D" to="player" method="_on_area_2d_body_entered"]

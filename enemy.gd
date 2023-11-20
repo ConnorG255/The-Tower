@@ -45,6 +45,6 @@ func _on_area_2d_body_entered(body):
 		Global.score += 100
 		queue_free()
 	if body.is_in_group("tower"):
-		Global.score -= 10
+		Global.tower_health -= 10
 		queue_free()
 	pass 

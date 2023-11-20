@@ -15,9 +15,13 @@ func singlebulletfire():
 	get_tree().get_root().call_deferred("add_child", b_instance)
 func fire():
 	# not optimal but dont know how to optimize rn
+	#looking back at it i think this is the worst thing i have ever written
 	if(Global.score >= 2500):
 		if(Global.score >= 5000):
-			firerate = 0.2
+			if(Global.score >= 7500):
+				firerate = 0.1
+			else:
+				firerate=0.2
 		else:
 			firerate = 0.3
 	singlebulletfire()

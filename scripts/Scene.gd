@@ -25,7 +25,7 @@ func _process(delta):
 	if spawn_timer >= spawn_interval:
 		spawn_enemy()
 		spawn_timer = 0
-		if(spawn_interval > 0.1):
+		if(spawn_interval > 0.2):
 			decrease_spawn_interval()
 		
 
@@ -35,7 +35,7 @@ func spawn_enemy():
 	call_deferred("add_child", enmy)
 
 func decrease_spawn_interval():
-	spawn_interval -= 0.015 
+	spawn_interval -= 0.0125 
 	#spawn_interval = max(0.5, spawn_interval)
 
 

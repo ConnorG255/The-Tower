@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://grlj4ggikjv7"]
+[gd_scene load_steps=5 format=3 uid="uid://grlj4ggikjv7"]
 
+[ext_resource type="FontFile" uid="uid://b0txxuq8jq84g" path="res://materials/joystix monospace.otf" id="1_q6qhe"]
 [ext_resource type="Script" path="res://score.gd" id="1_v024a"]
 [ext_resource type="Script" path="res://prefabs/towerhealth.gd" id="2_dh45y"]
 [ext_resource type="Script" path="res://prefabs/temp.gd" id="3_di12g"]
@@ -19,6 +20,7 @@ offset_top = 72.0
 offset_right = 175.0
 offset_bottom = 130.0
 theme_override_colors/font_color = Color(1, 1, 1, 0.792157)
+theme_override_fonts/font = ExtResource("1_q6qhe")
 theme_override_font_sizes/font_size = 40
 text = "0000000"
 script = ExtResource("1_v024a")
@@ -29,7 +31,8 @@ offset_left = 9.0
 offset_top = 12.0
 offset_right = 357.0
 offset_bottom = 70.0
-theme_override_font_sizes/font_size = 40
+theme_override_fonts/font = ExtResource("1_q6qhe")
+theme_override_font_sizes/font_size = 38
 text = "Tower Health: 100"
 script = ExtResource("2_dh45y")
 

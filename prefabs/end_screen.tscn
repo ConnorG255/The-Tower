@@ -15,10 +15,10 @@ script = ExtResource("1_updwx")
 
 [node name="Quit" type="Button" parent="."]
 layout_mode = 0
-offset_left = 416.0
-offset_top = 355.0
-offset_right = 835.0
-offset_bottom = 465.0
+offset_left = 411.0
+offset_top = 327.0
+offset_right = 830.0
+offset_bottom = 437.0
 theme_override_fonts/font = ExtResource("2_g8c8s")
 theme_override_font_sizes/font_size = 50
 text = "Quit?"

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://crmixsdgaq4xx"]
 
-[ext_resource type="Script" path="res://enemy.gd" id="1_6uahi"]
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_08rml"]
 [ext_resource type="Texture2D" uid="uid://djftv7qnr1u32" path="res://materials/character.png" id="1_ojd41"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hb6he"]
@@ -10,7 +10,7 @@ size = Vector2(23.3333, 23.3333)
 
 [node name="enemy" type="CharacterBody2D" groups=["enemy"]]
 scale = Vector2(0.6, 0.6)
-script = ExtResource("1_6uahi")
+script = ExtResource("1_08rml")
 
 [node name="Area2D" type="Area2D" parent="."]
 

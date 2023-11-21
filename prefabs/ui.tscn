@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://grlj4ggikjv7"]
 
 [ext_resource type="FontFile" uid="uid://b0txxuq8jq84g" path="res://materials/joystix monospace.otf" id="1_q6qhe"]
-[ext_resource type="Script" path="res://score.gd" id="1_v024a"]
 [ext_resource type="Script" path="res://prefabs/towerhealth.gd" id="2_dh45y"]
+[ext_resource type="Script" path="res://scripts/score.gd" id="2_tnxdi"]
 [ext_resource type="Script" path="res://prefabs/temp.gd" id="3_di12g"]
 
 [node name="UI" type="Control"]
@@ -23,7 +23,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.792157)
 theme_override_fonts/font = ExtResource("1_q6qhe")
 theme_override_font_sizes/font_size = 40
 text = "0000000"
-script = ExtResource("1_v024a")
+script = ExtResource("2_tnxdi")
 
 [node name="towerhealth" type="Label" parent="."]
 layout_mode = 0
